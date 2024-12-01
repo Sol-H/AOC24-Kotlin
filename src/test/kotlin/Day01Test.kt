@@ -18,15 +18,23 @@ class Day01Test {
         fun `part 1`() {
             val input = Resources.resourceAsListOfString("day01.txt")
             val day01 = Day01(input)
-            println(day01.solvePart1())
+            println("Part 1 Answer" + day01.solvePart1())
 
-            assertEquals(day01.solvePart1(), day01.solvePart1())
+            assertEquals(2378066, day01.solvePart1())
+        }
+
+        @Test
+        fun `example part 2`() {
+            val input = Resources.resourceAsListOfString("day01-example.txt")
+            val day01 = Day01(input)
+            assertEquals(31, day01.solvePart2())
         }
 
         @Test
         fun `part 2`() {
             val input = Resources.resourceAsListOfString("day01.txt")
             val day01 = Day01(input)
-            assertEquals(2, day01.solvePart2())
+            println("Part 2 Answer: " + day01.solvePart2())
+            assertEquals(18934359, day01.solvePart2())
         }
 }
