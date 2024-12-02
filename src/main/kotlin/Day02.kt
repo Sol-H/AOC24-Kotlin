@@ -21,7 +21,7 @@ class Day02(private val input: List<String>) {
                 val currentLevel = report[j]
                 if (abs(currentLevel - prevLevel) > 3 || abs(currentLevel - prevLevel) < 1){
                     reportIsSafe = false
-                    levelIndex += 1
+                    break
                 }
                 else {
                     levelIndex += 1
