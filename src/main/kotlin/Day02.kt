@@ -1,6 +1,6 @@
 package sol
 
-import kotlin.math.abs
+import kotlin.math.absoluteValue
 
 class Day02(private val input: List<String>) {
 
@@ -19,7 +19,7 @@ class Day02(private val input: List<String>) {
                 //     Checks current level against previous level
                 val prevLevel = report[levelIndex]
                 val currentLevel = report[j]
-                if (abs(currentLevel - prevLevel) > 3 || abs(currentLevel - prevLevel) < 1){
+                if ((currentLevel - prevLevel).absoluteValue > 3 || (currentLevel - prevLevel).absoluteValue < 1){
                     reportIsSafe = false
                     break
                 }

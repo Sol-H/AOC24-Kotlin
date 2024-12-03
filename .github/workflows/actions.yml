@@ -62,4 +62,30 @@ jobs:
         with:
           report_paths: '**/build/test-results/test/*.xml'
 
-  # Add more jobs for additional days as needed
+  day3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up JDK 11
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: '11'
+          java-package: jdk
+          architecture: x64
+          check-latest: false
+          overwrite-settings: true
+          job-status: success
+
+      - name: Build with Gradle
+        run: ./gradlew build
+
+      - name: Run Day 3 Tests
+        run: ./gradlew test --tests "*Day03Test*"
+
+      - name: JUnit Report Action
+        uses: mikepenz/action-junit-report@v5
+        with:
+          report_paths: '**/build/test-results/test/*.xml'
